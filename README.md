@@ -14,6 +14,9 @@ Any Frameworks and/or Libraries of your choice.
 
 ## Deployment
 
+Deployed with Netlify
+https://gifted-pike-9b920d.netlify.com/
+
 ## Built With
 
 -[react: ^16.12.0](https://reactjs.org/docs/getting-started.html), -[react-bootstrap: "^1.0.0-beta.16"](https://react-bootstrap.github.io/getting-started/introduction) - styling, -[react-helmet: ^5.2.1](https://github.com/nfl/react-helmet/blob/master/README.md)- document head manipulation,
