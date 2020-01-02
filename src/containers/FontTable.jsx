@@ -15,6 +15,7 @@ const FontTable = props => {
           cardTitle={item.family}
           cardText={cardText}
           fontSize={fontSize}
+          fontFamily={item.family}
           icon={icon}
         />
       ))}

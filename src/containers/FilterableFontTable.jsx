@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import FontScripts from "./FontScripts";
 import FilterNavbar from "./FilterNavbar";
 import FontTable from "./FontTable";
 import Button from "../components/iconButton";
@@ -7,20 +9,18 @@ class FilterableFontTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      userFontFamily: "",
+      userCardText: "",
       cardText: "my sentence",
       fontSizesOptions: [12, 18, 20, 24],
       cardTextFontSize: 18,
       fontsList: [],
+      filteredFontsList: [],
       isFontsFiltered: false,
+      isUserTextInput: false,
       isLoaded: false,
-      error: null,
-      userInput: {
-        cardText: "",
-        fontFamily: "",
-        filteredFontsList: []
-      }
+      error: null
     };
-
     this.icons = {
       refreshIcon: "fas fa-redo",
       plusIcon: "fas fa-plus-circle",
@@ -29,7 +29,7 @@ class FilterableFontTable extends Component {
       modeIcon: "fas fa-adjust"
     };
     this.handleFamilyFilter = this.handleFamilyFilter.bind(this);
-    this.handleCardText = this.handleCardText.bind(this);
+    this.handleTextInput = this.handleTextInput.bind(this);
     this.handleFontSizeDropdown = this.handleFontSizeDropdown.bind(this);
     this.handleRefreshButton = this.handleRefreshButton.bind(this);
     this.handleScrollTopButton = this.handleScrollTopButton.bind(this);
@@ -61,19 +61,15 @@ class FilterableFontTable extends Component {
     const filteredItems = this.state.fontsList.filter(item => {
       return item.family.toLowerCase().search(family.toLowerCase()) > -1;
     });
-
-    this.setState(prevState => ({
-      userInput: { ...prevState.userInput, filteredFontsList: filteredItems }
-    }));
-    this.setState({ isFontsFiltered: true });
+    this.setState({
+      userFontFamily: family,
+      filteredFontsList: filteredItems,
+      isFontsFiltered: true
+    });
   }
 
-  handleCardText(inputText) {
-    if (!inputText) {
-      this.setState({ cardText: "my sentence" });
-    } else {
-      this.setState({ cardText: inputText });
-    }
+  handleTextInput(inputText) {
+    this.setState({ userCardText: inputText, isUserTextInput: true });
   }
   handleFontSizeDropdown(eventKey) {
     this.setState({
@@ -82,9 +78,12 @@ class FilterableFontTable extends Component {
   }
   handleRefreshButton() {
     this.setState({
+      userFontFamily: "",
+      userCardText: "",
       cardText: "my sentence",
       cardTextFontSize: 18,
-      isFontsFiltered: false
+      isFontsFiltered: false,
+      isUserTextInput: false
     });
   }
 
@@ -96,26 +95,41 @@ class FilterableFontTable extends Component {
   render() {
     const {
       cardText,
+      userCardText,
+      userFontFamily,
       fontSizesOptions,
       cardTextFontSize,
       fontsList,
+      filteredFontsList,
       isLoaded,
-      isFontsFiltered
+      isFontsFiltered,
+      isUserTextInput
     } = this.state;
 
     const filterValidation = () => {
       if (isFontsFiltered) {
-        return this.state.userInput.filteredFontsList;
+        return filteredFontsList;
       } else {
         return fontsList;
       }
     };
 
+    const textInputValidation = () => {
+      if (isUserTextInput) {
+        return this.state.userCardText;
+      } else {
+        return cardText;
+      }
+    };
+
     return (
       <div>
+        <FontScripts items={filterValidation()} />
         <FilterNavbar
+          familyFilterValue={userFontFamily}
           onFamilyFilter={this.handleFamilyFilter}
-          onTextInputField={this.handleCardText}
+          textInputValue={userCardText}
+          onTextInputField={this.handleTextInput}
           cardTextFontSize={cardTextFontSize}
           fontSizesOptions={fontSizesOptions}
           onFontSizesDropdown={this.handleFontSizeDropdown}
@@ -127,16 +141,18 @@ class FilterableFontTable extends Component {
 
         <FontTable
           fonts={filterValidation()}
-          cardText={cardText}
+          cardText={textInputValidation()}
           fontSize={cardTextFontSize}
           plusIcon={this.icons.plusIcon}
         />
-        <Button
-          id="scroll-top-button"
-          label="scroll-top-button"
-          action={this.handleScrollTopButton}
-          icon={this.icons.scrollTopIcon}
-        />
+        <div className="fixed-top text-right m-4">
+          <Button
+            id="scroll-top-button"
+            label="scroll-top-button"
+            action={this.handleScrollTopButton}
+            icon={this.icons.scrollTopIcon}
+          />
+        </div>
       </div>
     );
   }

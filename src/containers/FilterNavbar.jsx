@@ -37,22 +37,23 @@ class FilterNavbar extends React.Component {
       modeIcon,
       listIcon,
       refreshIcon,
-      textInputField,
-      filterValue
+      familyFilterValue,
+      textInputValue
     } = this.props;
     return (
       <InputGroup size="lg" className="mb-5">
         <FormControl
+          value={familyFilterValue}
           name="family-filter"
           placeholder="Search fonts"
           onChange={this.handleFamilyFilter}
         />
 
         <FormControl
+          value={textInputValue}
           name="text-input"
           placeholder="Type something"
           onChange={this.handleTextInputField}
-          value={textInputField}
         />
         <DropdownButton
           as={InputGroup.Prepend}
