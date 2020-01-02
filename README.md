@@ -1,68 +1,91 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Google Fonts
 
-## Available Scripts
+Chingu Voyage Pre-work Solo front-end project. The participant is responsible for coding the HTML, CSS, and JavaScript to get the structure, styling, and functionality up and running.
+**Requirements**
 
-In the project directory, you can run:
+_Structure_
 
-### `npm start`
+- [ ] Header with minor navigation
+- [ ] Nav with Major navigation / page-manipulation
+- [ ] Main section for the font cards
+- [ ] Font cards which display the Font Name, the sample text, and an add button
+- [ ] Back-to-top button to click and scroll back up to the top
+- [ ] Footer section with your developer information
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+_Functionality_
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- [ ] Text typed into the custom text (type something) box should immediately change the sample text in each font card
+- [ ] The sample text should return to the default sample if the input box (type something) no longer has any input
+- [ ] Font size chooser should have at least four sizes and should immediately change the sample text font size in each font card
+- [ ] Implement the clickable 'reset' icon on the far right of the major navigation; it should reset the page as if the page were reloaded _(do not actually reset the page)_
+- [ ] On load, the page should display fonts sorted by current popularity, as returned by the Google Fonts Developer API _(see below)_
+- [ ] The search feature should be fully functional and should display matching fonts (it's up to you if you want to do this via a 'submit' or through onchange)
+- [ ] When the search input is cleared (via reset button or manually), the fonts should automaticaly display sorted by poplarity again
 
-### `npm test`
+## API Information
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Consider designing the app so that the Google Fonts Developer API is only called once during the app lifetime.
 
-### `npm run build`
+This project utilizes the [**Google Fonts API**](https://developers.google.com/fonts/docs/getting_started) and the [**Google Fonts Developer API**](https://developers.google.com/fonts/docs/developer_api). You will need to register for a free api key in order to complete this project as calls to the developer api are severely capped without one.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Please do _not_ use the Google Web Font Loader for Tier 2.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+What things you need to install the software and how to install them
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+Give examples
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Installing
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+A step by step series of examples that tell you how to get a development env running
 
-## Learn More
+Say what the step will be
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+Give the example
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+And repeat
 
-### Code Splitting
+```
+until finished
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+End with an example of getting some data out of the system or using it for a little demo
 
-### Analyzing the Bundle Size
+## Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Add additional notes about how to deploy this on a live system
 
-### Making a Progressive Web App
+## Built With
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+- [Maven](https://maven.apache.org/) - Dependency Management
+- [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-### Advanced Configuration
+## Acknowledgments
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
 
-### Deployment
+* react bootsrap
+  npm install react-bootstrap bootstrap
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+-bootstrap 4
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+-font awesome icons https://fontawesome.com/icons?d=gallery&m=free
+-react helmet installation npm install --save react-helmet
