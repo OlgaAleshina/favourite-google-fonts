@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import FontScripts from "./FontScripts";
 import FilterNavbar from "./FilterNavbar";
 import FontTable from "./FontTable";
