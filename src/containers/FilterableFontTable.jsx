@@ -3,6 +3,7 @@ import FontScripts from "./FontScripts";
 import FilterNavbar from "./FilterNavbar";
 import FontTable from "./FontTable";
 import Button from "../components/iconButton";
+import Spinner from "../components/spinner";
 
 class FilterableFontTable extends Component {
   constructor(props) {
@@ -100,6 +101,7 @@ class FilterableFontTable extends Component {
       cardTextFontSize,
       fontsList,
       filteredFontsList,
+      error,
       isLoaded,
       isFontsFiltered,
       isUserTextInput
@@ -121,6 +123,12 @@ class FilterableFontTable extends Component {
       }
     };
 
+
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <Spinner />;
+    } else {
     return (
       <div>
         <FontScripts items={filterValidation()} />
@@ -155,5 +163,5 @@ class FilterableFontTable extends Component {
       </div>
     );
   }
-}
+}}
 export default FilterableFontTable;
