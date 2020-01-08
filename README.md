@@ -2,7 +2,7 @@
 
 Chingu Voyage Pre-work Solo front-end project. The participant is responsible for coding the HTML, CSS, and JavaScript to get the structure, styling, and functionality up and running.
 
-# Project Decription
+## Project Decription
 
 Create web page to search for Google fonts. The project utilizes the [**Google Fonts API**](https://developers.google.com/fonts/docs/getting_started) and the [**Google Fonts Developer API**](https://developers.google.com/fonts/docs/developer_api).
 The structure includes: nav with Major navigation / page-manipulation and main section for the font cards.
@@ -12,7 +12,7 @@ Default font cards display the Font Name sorted by popularity and the sample tex
 The use of the Google Web Font Loader is not allowed.
 Any Frameworks and/or Libraries of your choice.
 
-# Features
+## Features
 
 The project includes
 - [x] fonts filter 
@@ -24,7 +24,7 @@ The project includes
 - [ ] grid\list display
 
 
-# Running the project
+## Running the project
 
 - **Clone** Repository.
 
