@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { CardDeck } from "react-bootstrap";
 import FontCard from "../components/fontCard";
 
