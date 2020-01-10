@@ -2,7 +2,7 @@
 
 Chingu Voyage Pre-work Solo front-end project. The participant is responsible for coding the HTML, CSS, and JavaScript to get the structure, styling, and functionality up and running.
 
-## Project Decription
+## Project Description
 
 Create web page to search for Google fonts. The project utilizes the [**Google Fonts API**](https://developers.google.com/fonts/docs/getting_started) and the [**Google Fonts Developer API**](https://developers.google.com/fonts/docs/developer_api).
 The structure includes: nav with Major navigation / page-manipulation and main section for the font cards.
@@ -55,6 +55,6 @@ https://gifted-pike-9b920d.netlify.com/
 ## Built With
 
 - [react: ^16.12.0](https://reactjs.org/docs/getting-started.html) - Framework for building user interfaces.
-- [react-bootstrap: "^1.0.0-beta.16"](https://react-bootstrap.github.io/getting-started/introduction) - Styling.
+- [react-bootstrap: ^1.0.0-beta.16](https://react-bootstrap.github.io/getting-started/introduction) - Styling.
 - [react-helmet: ^5.2.1](https://github.com/nfl/react-helmet/blob/master/README.md)- Document head manipulation.
 - [font awesome icons](https://fontawesome.com/icons?d=gallery&m=free) - Icons.
